@@ -1,8 +1,11 @@
 openapi: 3.1.0
 info:
-  title: Reflect API
+  title: Reflect
   version: 1.0.0
-  description: API for interacting with Reflect testing platform
+  description: |-
+
+    Effortlessly create, execute, and troubleshoot automated end-to-end tests
+    using Reflect's advanced AI capabilities.
 servers:
   - url: https://api.reflect.run/v1
 components:
@@ -40,6 +43,8 @@ paths:
                           type: array
                           items:
                             type: string
+      tags:
+        - Tests
   /tests/{test-id}/executions:
     post:
       summary: Run a test
@@ -85,6 +90,9 @@ paths:
                 properties:
                   executionId:
                     type: integer
+      tags:
+        - Tests
+        - Executions
   /executions/{execution-id}:
     get:
       summary: Get execution status
@@ -117,3 +125,6 @@ paths:
                           type: integer
                         completed:
                           type: integer
+      tags:
+        - Executions
+        - Execution
