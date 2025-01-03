@@ -1,4 +1,4 @@
-executed: '2025-01-03T01:31:03.416Z'
+executed: '2025-01-03T01:35:48.492Z'
 results:
   - code: apis-json-specification-aid-info
     message: There is an aid.
@@ -341,3 +341,239 @@ results:
       end:
         line: 32
         character: 28
+  - code: apis-json-common-info
+    message: There is an common property.
+    path:
+      - common
+    severity: 2
+    range:
+      start:
+        line: 33
+        character: 7
+      end:
+        line: 73
+        character: 24
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '0'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 36
+        character: 9
+      end:
+        line: 36
+        character: 37
+  - code: apis-json-apis-properties-pricing-info
+    message: Has Pricing
+    path:
+      - common
+      - '0'
+      - type
+    severity: 2
+    range:
+      start:
+        line: 37
+        character: 10
+      end:
+        line: 37
+        character: 17
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '1'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 40
+        character: 9
+      end:
+        line: 40
+        character: 38
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '2'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 44
+        character: 9
+      end:
+        line: 44
+        character: 39
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '3'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 48
+        character: 9
+      end:
+        line: 48
+        character: 62
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '4'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 52
+        character: 9
+      end:
+        line: 52
+        character: 75
+  - code: apis-json-apis-properties-signup-info
+    message: Has a Sign Up
+    path:
+      - common
+      - '4'
+      - type
+    severity: 2
+    range:
+      start:
+        line: 53
+        character: 10
+      end:
+        line: 53
+        character: 16
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '5'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 56
+        character: 9
+      end:
+        line: 56
+        character: 35
+  - code: apis-json-apis-properties-about-info
+    message: Has About
+    path:
+      - common
+      - '5'
+      - type
+    severity: 2
+    range:
+      start:
+        line: 57
+        character: 10
+      end:
+        line: 57
+        character: 15
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '6'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 60
+        character: 9
+      end:
+        line: 60
+        character: 46
+  - code: apis-json-apis-properties-terms-of-service-info
+    message: Has an API Terms of Service
+    path:
+      - common
+      - '6'
+      - type
+    severity: 2
+    range:
+      start:
+        line: 61
+        character: 10
+      end:
+        line: 61
+        character: 24
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '7'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 64
+        character: 9
+      end:
+        line: 64
+        character: 44
+  - code: apis-json-apis-properties-privacy-policy-info
+    message: Has an API Privacy Policy
+    path:
+      - common
+      - '7'
+      - type
+    severity: 2
+    range:
+      start:
+        line: 65
+        character: 10
+      end:
+        line: 65
+        character: 23
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '8'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 68
+        character: 9
+      end:
+        line: 68
+        character: 47
+  - code: apis-json-apis-properties-url-info
+    message: Property URLs Are Valid
+    path:
+      - common
+      - '9'
+      - url
+    severity: 2
+    range:
+      start:
+        line: 72
+        character: 9
+      end:
+        line: 72
+        character: 55
+  - code: apis-json-apis-properties-getting-started-info
+    message: Has Getting Started
+    path:
+      - common
+      - '9'
+      - type
+    severity: 2
+    range:
+      start:
+        line: 73
+        character: 10
+      end:
+        line: 73
+        character: 24
