@@ -9,6 +9,8 @@ apis:
     properties:
       - url: https://reflect.run/docs/developer-api/documentation/
         type: Documentation
+      - type: OpenAPI
+        url: properties/reflect-openapi.yml
     description: |-
 
       Effortlessly create, execute, and troubleshoot automated end-to-end tests
