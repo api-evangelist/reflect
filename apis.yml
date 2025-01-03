@@ -4,7 +4,9 @@ apis:
   - aid: reflect:reflect
     name: Reflect
     tags:
-      - Testing
+      - Tests
+      - ' Executions'
+      - Artificial Intelligence
     humanURL: https://reflect.run/
     properties:
       - url: https://reflect.run/docs/developer-api/documentation/
