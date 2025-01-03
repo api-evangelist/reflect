@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: Reflect API
+  version: 1.0.0
+  description: API for interacting with Reflect testing platform
+servers:
+  - url: https://api.reflect.run/v1
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+security:
+  - ApiKeyAuth: []
+paths:
+  /tests:
+    get:
+      summary: List all tests
+      responses:
+        '200':
+          description: A list of test descriptions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tests:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        created:
+                          type: integer
+                        tags:
+                          type: array
+                          items:
+                            type: string
+  /tests/{test-id}/executions:
+    post:
+      summary: Run a test
+      parameters:
+        - name: test-id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                overrides:
+                  type: object
+                  properties:
+                    hostnames:
+                      type: array
+                    parameters:
+                      type: array
+                    cookies:
+                      type: array
+                    headers:
+                      type: array
+                    localStorage:
+                      type: array
+                    sessionStorage:
+                      type: array
+                variables:
+                  type: object
+                emailFailures:
+                  type: boolean
+      responses:
+        '200':
+          description: Execution scheduled
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  executionId:
+                    type: integer
+  /executions/{execution-id}:
+    get:
+      summary: Get execution status
+      parameters:
+        - name: execution-id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Execution status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  executionId:
+                    type: integer
+                  tests:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        testId:
+                          type: integer
+                        status:
+                          type: string
+                        started:
+                          type: integer
+                        completed:
+                          type: integer
