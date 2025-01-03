@@ -9,19 +9,22 @@ apis:
     properties:
       - url: https://reflect.run/docs/developer-api/documentation/
         type: Documentation
-    description: >-
+    description: |-
+
       Effortlessly create, execute, and troubleshoot automated end-to-end tests
       using Reflect's advanced AI capabilities.
 name: Reflect
 tags:
   - Testing
+  - Artificial Intelligence
 type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-13'
-modified: '2024-12-22'
+modified: '2025-01-02'
 position: Consuming
-description: >-
+description: |-
+
   Effortlessly create, execute, and troubleshoot automated end-to-end tests
   using Reflect's advanced AI capabilities.
 maintainers:
