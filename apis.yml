@@ -1,5 +1,17 @@
 aid: reflect
-url: https://raw.githubusercontent.com/api-search/reflect/refs/heads/main/apis.yml
+name: Reflect
+description: |-
+  Effortlessly create, execute, and troubleshoot automated end-to-end tests
+  using Reflect's advanced AI capabilities.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Testing
+  - Artificial Intelligence
+url: https://raw.githubusercontent.com/api-evangelist/reflect/refs/heads/main/apis.yml
+created: '2024-11-13'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis:
   - aid: reflect:reflect
     name: Reflect
@@ -10,27 +22,8 @@ apis:
       - url: https://reflect.run/docs/developer-api/documentation/
         type: Documentation
     description: |-
-
       Effortlessly create, execute, and troubleshoot automated end-to-end tests
       using Reflect's advanced AI capabilities.
-name: Reflect
-tags:
-  - Testing
-  - Artificial Intelligence
-type: Contract
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-access: 3rd-Party
-created: '2024-11-13'
-modified: '2025-01-02'
-position: Consuming
-description: |-
-
-  Effortlessly create, execute, and troubleshoot automated end-to-end tests
-  using Reflect's advanced AI capabilities.
-maintainers:
-  - FN: Kin Lane
-    email: info@apievangelist.com
-specificationVersion: '0.19'
 common:
   - name: Pricing | Reflect
     description: 'null'
@@ -39,7 +32,7 @@ common:
   - name: Automated Web Testing | Reflect
     description: 'null'
     url: https://reflect.run/articles/
-    type: ' Articles'
+    type: Articles
   - name: Customers | Reflect
     description: 'null'
     url: https://reflect.run/customers/
@@ -72,3 +65,6 @@ common:
     description: 'null'
     url: https://reflect.run/docs/overview/quick-start/
     type: GettingStarted
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
