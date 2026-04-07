@@ -1,14 +1,15 @@
 aid: reflect
 name: Reflect
-description: |-
-  Effortlessly create, execute, and troubleshoot automated end-to-end tests
-  using Reflect's advanced AI capabilities.
+description: >-
+  Effortlessly create, execute, and troubleshoot automated end-to-end tests using
+  Reflect's advanced AI capabilities.
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Testing
   - Artificial Intelligence
-url: https://raw.githubusercontent.com/api-evangelist/reflect/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/reflect/refs/heads/main/apis.yml
 created: '2024-11-13'
 modified: '2026-03-16'
 specificationVersion: '0.19'
@@ -21,9 +22,9 @@ apis:
     properties:
       - url: https://reflect.run/docs/developer-api/documentation/
         type: Documentation
-    description: |-
-      Effortlessly create, execute, and troubleshoot automated end-to-end tests
-      using Reflect's advanced AI capabilities.
+    description: >-
+      Effortlessly create, execute, and troubleshoot automated end-to-end tests using
+      Reflect's advanced AI capabilities.
 common:
   - name: Pricing | Reflect
     description: 'null'
