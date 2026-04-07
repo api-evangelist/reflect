@@ -91,8 +91,8 @@ paths:
                   executionId:
                     type: integer
       tags:
-        - Tests
         - Executions
+        - Tests
   /executions/{execution-id}:
     get:
       summary: Reflect Get execution status
@@ -126,5 +126,9 @@ paths:
                         completed:
                           type: integer
       tags:
-        - Executions
         - Execution
+        - Executions
+tags:
+  - name: Execution
+  - name: Executions
+  - name: Tests
