@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "reflect": "https://reflect.run/vocabulary#",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "Test": {
+      "@id": "reflect:Test",
+      "description": "An automated end-to-end test defined in the Reflect platform."
+    },
+    "testId": {
+      "@id": "reflect:testId",
+      "@type": "xsd:integer",
+      "description": "Unique integer identifier for a Reflect test."
+    },
+    "Execution": {
+      "@id": "reflect:Execution",
+      "description": "A single run of one or more Reflect tests."
+    },
+    "executionId": {
+      "@id": "reflect:executionId",
+      "@type": "xsd:integer",
+      "description": "Unique integer identifier for a test execution."
+    },
+    "executionStatus": {
+      "@id": "reflect:executionStatus",
+      "@type": "xsd:string",
+      "description": "Status of a test execution: pending, running, passed, failed, or error."
+    },
+    "tags": {
+      "@id": "schema:keywords",
+      "description": "List of tags for categorizing tests."
+    },
+    "TestOverrides": {
+      "@id": "reflect:TestOverrides",
+      "description": "Runtime overrides applied to a test execution for hostnames, parameters, cookies, and headers."
+    },
+    "Action": "schema:Action",
+    "SoftwareSourceCode": "schema:SoftwareSourceCode"
+  }
+}

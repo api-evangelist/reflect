@@ -1,0 +1,84 @@
+name: Reflect Vocabulary
+description: >-
+  Vocabulary for the Reflect AI-powered automated end-to-end testing platform,
+  covering test management, execution lifecycle, and integration concepts.
+version: '1.0'
+modified: '2026-05-02'
+source: https://reflect.run
+terms:
+  - term: Test
+    definition: >-
+      An automated end-to-end test recorded or defined in the Reflect platform.
+      Tests represent user workflows recorded in a browser environment and
+      parameterized for repeatable execution. Identified by an integer test ID.
+    tags:
+      - Core Concept
+
+  - term: Execution
+    definition: >-
+      A single run of a Reflect test or test suite. Created via the POST
+      /tests/{test-id}/executions endpoint. Returns an executionId that can
+      be polled to check completion and results.
+    tags:
+      - Core Concept
+
+  - term: Execution Status
+    definition: >-
+      The current state of a test execution. Values include pending (queued),
+      running (in progress), passed (all assertions succeeded), failed
+      (one or more assertions failed), and error (execution encountered
+      a technical error).
+    tags:
+      - Status
+
+  - term: Override
+    definition: >-
+      A runtime parameter substitution applied to a test execution. Allows
+      the same test to run against different environments or with different
+      data by overriding hostnames (e.g., redirecting from production to
+      staging), URL parameters, cookies, headers, localStorage, or
+      sessionStorage values.
+    tags:
+      - Configuration
+
+  - term: Hostname Override
+    definition: >-
+      A specific type of Override that redirects HTTP requests from one
+      hostname to another during test execution. Used to run tests recorded
+      against production against staging or preview environments.
+    tags:
+      - Override
+      - Environment
+
+  - term: Variable
+    definition: >-
+      A named value that can be referenced within a Reflect test and
+      overridden at execution time via the variables field in the run
+      request body. Supports data-driven testing.
+    tags:
+      - Parameterization
+
+  - term: AI-Powered Testing
+    definition: >-
+      Reflect uses AI capabilities to assist with test creation, maintenance,
+      and failure analysis. AI can automatically update tests when UI changes
+      occur and suggest fixes for failing assertions.
+    tags:
+      - AI
+      - Feature
+
+  - term: End-to-End Test
+    definition: >-
+      A test that validates complete user workflows from the UI layer through
+      all backend systems. Reflect specializes in browser-based end-to-end
+      tests that replicate real user interactions.
+    tags:
+      - Test Type
+
+  - term: emailFailures
+    definition: >-
+      A boolean parameter in the test run request that, when true, sends
+      email notifications to configured recipients when a test execution fails.
+    tags:
+      - Notification
+      - Configuration

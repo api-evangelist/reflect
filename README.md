@@ -1,59 +1,97 @@
-# Reflect (reflect)
+# Reflect
 
-Effortlessly create, execute, and troubleshoot automated end-to-end tests
-using Reflect's advanced AI capabilities.
+Reflect is an AI-powered automated end-to-end testing platform that enables teams to effortlessly create, execute, and troubleshoot automated browser tests. Reflect provides a no-code test recorder and a REST API for integrating test execution into CI/CD pipelines with support for environment overrides.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-search/reflect/refs/heads/main/apis.yml)
+**Human URL:** [https://reflect.run](https://reflect.run)
 
-## Scope
+**API Documentation:** [https://reflect.run/docs/developer-api/documentation/](https://reflect.run/docs/developer-api/documentation/)
 
-- **Type:** Contract 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+## Tags
 
-## Tags:
-
- - Testing, Artificial Intelligence
-
-## Timestamps
-
-- **Created:** 2024-11-13 
-- **Modified:** 2025-01-02 
+- Testing
+- AI Testing
+- Automated Testing
+- End-to-End Testing
+- CI/CD
+- QA
+- Artificial Intelligence
 
 ## APIs
 
-### Reflect
+### Reflect API
+REST API for listing tests, triggering test executions, and checking execution status.
 
-Effortlessly create, execute, and troubleshoot automated end-to-end tests
-using Reflect's advanced AI capabilities.
-
-**Human URL:** [https://reflect.run/](https://reflect.run/)
-
-
-#### Tags:
-
- - Testing
-
-#### Properties
+**Base URL:** `https://api.reflect.run/v1`
 
 - [Documentation](https://reflect.run/docs/developer-api/documentation/)
+- [OpenAPI](openapi/reflect-openapi.yml)
+- [Getting Started](https://reflect.run/docs/overview/quick-start/)
+
+## Artifacts
+
+### OpenAPI Specifications
+
+| Specification | Description |
+|---------------|-------------|
+| [Reflect OpenAPI](openapi/reflect-openapi.yml) | REST API for test management and execution |
+
+### Rules
+
+| Ruleset | Description |
+|---------|-------------|
+| [Reflect Rules](rules/reflect-rules.yml) | Spectral ruleset for Reflect API conventions |
+
+### Capabilities
+
+| Capability | Description |
+|------------|-------------|
+| [Test Automation](capabilities/test-automation.yaml) | End-to-end test management and execution for CI/CD |
+
+**Shared Definitions:**
+- [Reflect API](capabilities/shared/reflect.yaml)
+
+### JSON Schema
+
+| Schema | Description |
+|--------|-------------|
+| [Test Schema](json-schema/reflect-test-schema.json) | Reflect test definition with ID, name, and tags |
+| [Execution Schema](json-schema/reflect-execution-schema.json) | Test execution with status and per-test results |
+
+### JSON Structure
+
+| Structure | Description |
+|-----------|-------------|
+| [API Structure](json-structure/reflect-api-structure.json) | Structural documentation for all Reflect API endpoints |
+
+### JSON-LD
+
+| Context | Description |
+|---------|-------------|
+| [Reflect Context](json-ld/reflect-context.jsonld) | JSON-LD context for test and execution entities |
+
+### Examples
+
+| Example | Description |
+|---------|-------------|
+| [List Tests](examples/reflect-list-tests-example.json) | List all available tests |
+| [Run Test](examples/reflect-run-test-example.json) | Trigger a test execution with overrides |
+
+### Vocabulary
+
+| Vocabulary | Description |
+|------------|-------------|
+| [Reflect Vocabulary](vocabulary/reflect-vocabulary.yml) | Domain vocabulary for automated testing and Reflect concepts |
 
 ## Common Properties
 
 - [Pricing](https://reflect.run/pricing/)
-- [ Articles](https://reflect.run/articles/)
-- [Customers](https://reflect.run/customers/)
-- [Login](https://app.reflect.run/login?next=/tests/folders/all)
-- [SignUp](https://app.reflect.run/registration?next=%2Ftests%2Ffolders%2Fall)
-- [About](https://reflect.run/about/)
-- [TermsOfService](https://reflect.run/terms-of-service/)
-- [PrivacyPolicy](https://reflect.run/privacy-policy/)
+- [Articles](https://reflect.run/articles/)
+- [Sign Up](https://app.reflect.run/registration)
+- [Terms of Service](https://reflect.run/terms-of-service/)
+- [Privacy Policy](https://reflect.run/privacy-policy/)
 - [Integrations](https://reflect.run/docs/integrations/)
-- [GettingStarted](https://reflect.run/docs/overview/quick-start/)
 
 ## Maintainers
 
 **FN:** Kin Lane
-
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com

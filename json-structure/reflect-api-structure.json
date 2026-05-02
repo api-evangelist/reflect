@@ -1,0 +1,62 @@
+{
+  "name": "Reflect API Structure",
+  "description": "Structural overview of the Reflect automated testing REST API.",
+  "version": "1.0",
+  "baseUrl": "https://api.reflect.run/v1",
+  "authentication": {
+    "type": "API Key",
+    "header": "X-API-KEY",
+    "obtainFrom": "https://app.reflect.run — Settings page"
+  },
+  "resources": {
+    "tests": {
+      "path": "/tests",
+      "operations": [
+        {
+          "method": "GET",
+          "description": "List all tests in the account.",
+          "response": {
+            "tests": [{"id": 0, "name": "string", "created": 0, "tags": ["string"]}]
+          }
+        }
+      ]
+    },
+    "testExecutions": {
+      "path": "/tests/{test-id}/executions",
+      "operations": [
+        {
+          "method": "POST",
+          "description": "Run a specific test, returns an executionId.",
+          "requestBody": {
+            "overrides": {
+              "hostnames": "array",
+              "parameters": "array",
+              "cookies": "array",
+              "headers": "array",
+              "localStorage": "array",
+              "sessionStorage": "array"
+            },
+            "variables": "object",
+            "emailFailures": "boolean"
+          },
+          "response": {"executionId": 0}
+        }
+      ]
+    },
+    "executions": {
+      "path": "/executions/{execution-id}",
+      "operations": [
+        {
+          "method": "GET",
+          "description": "Get the status of a test execution.",
+          "response": {
+            "executionId": 0,
+            "tests": [
+              {"testId": 0, "status": "pending|running|passed|failed|error", "started": 0, "completed": 0}
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

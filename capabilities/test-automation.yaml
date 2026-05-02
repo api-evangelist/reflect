@@ -1,0 +1,114 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Reflect Test Automation"
+  description: >-
+    Workflow capability for QA engineers and DevOps teams managing and
+    executing automated end-to-end tests through the Reflect API. Supports
+    listing available tests, triggering test runs with parameter overrides,
+    and monitoring execution status for CI/CD pipeline integration.
+  tags:
+    - Reflect
+    - Testing
+    - Automation
+    - CI/CD
+    - End-to-End Tests
+    - QA
+  created: "2026-05-02"
+  modified: "2026-05-02"
+
+binds:
+  - namespace: env
+    keys:
+      REFLECT_API_KEY: REFLECT_API_KEY
+
+capability:
+  consumes:
+    - import: reflect
+      location: ./shared/reflect.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: reflect-automation-api
+      description: "Unified REST API for Reflect test automation workflows."
+      resources:
+        - path: /v1/tests
+          name: tests
+          description: "Available tests catalog."
+          operations:
+            - method: GET
+              name: list-tests
+              description: "List all automated end-to-end tests."
+              call: "reflect.list-tests"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/tests/{testId}/executions
+          name: test-runs
+          description: "Test execution triggers."
+          operations:
+            - method: POST
+              name: run-test
+              description: "Trigger a test run."
+              call: "reflect.run-test"
+              with:
+                test-id: "rest.testId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/executions/{executionId}
+          name: executions
+          description: "Test execution status."
+          operations:
+            - method: GET
+              name: get-execution-status
+              description: "Check test execution status."
+              call: "reflect.get-execution-status"
+              with:
+                execution-id: "rest.executionId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9080
+      namespace: reflect-automation-mcp
+      transport: http
+      description: "MCP server for AI-assisted Reflect test automation."
+      tools:
+        - name: list-tests
+          description: "List all automated end-to-end tests available in the Reflect account."
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "reflect.list-tests"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: run-test
+          description: "Trigger a Reflect automated test execution, with optional overrides for target hostnames, parameters, cookies, headers, and session storage."
+          hints:
+            readOnly: false
+            openWorld: false
+          call: "reflect.run-test"
+          with:
+            test-id: "tools.testId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-execution-status
+          description: "Check the current status of a Reflect test execution and retrieve per-test results."
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "reflect.get-execution-status"
+          with:
+            execution-id: "tools.executionId"
+          outputParameters:
+            - type: object
+              mapping: "$."

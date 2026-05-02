@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/reflect/json-schema/reflect-execution-schema.json",
+  "title": "Reflect Test Execution",
+  "description": "Schema for a Reflect test execution record including status and per-test results.",
+  "type": "object",
+  "properties": {
+    "executionId": {
+      "type": "integer",
+      "description": "Unique integer identifier for the execution."
+    },
+    "tests": {
+      "type": "array",
+      "description": "Results for each test within the execution.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "testId": {
+            "type": "integer",
+            "description": "ID of the test that was executed."
+          },
+          "status": {
+            "type": "string",
+            "description": "Execution status of the test.",
+            "enum": ["pending", "running", "passed", "failed", "error"]
+          },
+          "started": {
+            "type": "integer",
+            "description": "Unix timestamp when the test execution started."
+          },
+          "completed": {
+            "type": "integer",
+            "description": "Unix timestamp when the test execution completed."
+          }
+        },
+        "required": ["testId", "status"]
+      }
+    }
+  },
+  "required": ["executionId"]
+}

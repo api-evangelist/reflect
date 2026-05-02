@@ -1,0 +1,64 @@
+extends: spectral:oas
+rules:
+  reflect-operation-summary-title-case:
+    description: All operation summaries must use Title Case.
+    message: "Operation summary '{{value}}' must use Title Case."
+    severity: warn
+    given: "$.paths[*][*].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z][a-zA-Z0-9 '\\-]*$"
+
+  reflect-api-key-auth:
+    description: Reflect API uses X-API-KEY header authentication.
+    message: "Security scheme must use apiKey in header with name X-API-KEY."
+    severity: warn
+    given: "$.components.securitySchemes[*][?(@.type=='apiKey')]"
+    then:
+      field: name
+      function: pattern
+      functionOptions:
+        match: "^X-API-KEY$"
+
+  reflect-tags-defined:
+    description: All operations must include at least one tag.
+    message: "Operation must include at least one tag."
+    severity: warn
+    given: "$.paths[*][*]"
+    then:
+      field: tags
+      function: truthy
+
+  reflect-servers-defined:
+    description: API must define at least one server.
+    message: "API must have at least one server defined."
+    severity: error
+    given: "$"
+    then:
+      field: servers
+      function: truthy
+
+  reflect-response-200-defined:
+    description: All operations must define a 200 success response.
+    message: "Operation must define a 200 response."
+    severity: error
+    given: "$.paths[*][*].responses"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          required: ["200"]
+
+  reflect-integer-ids:
+    description: >-
+      Reflect uses integer IDs for tests and executions (not UUIDs).
+      Path parameters should reflect this.
+    message: "Path parameter for ID should use type integer."
+    severity: info
+    given: "$.paths[*][*].parameters[?(@.in=='path')]"
+    then:
+      field: schema.type
+      function: enumeration
+      functionOptions:
+        values: ["integer", "string"]

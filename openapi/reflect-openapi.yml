@@ -19,7 +19,7 @@ security:
 paths:
   /tests:
     get:
-      summary: Reflect List all tests
+      summary: List All Tests
       responses:
         '200':
           description: A list of test descriptions
@@ -47,7 +47,7 @@ paths:
         - Tests
   /tests/{test-id}/executions:
     post:
-      summary: Reflect Run a test
+      summary: Run a Test
       parameters:
         - name: test-id
           in: path
@@ -95,7 +95,7 @@ paths:
         - Tests
   /executions/{execution-id}:
     get:
-      summary: Reflect Get execution status
+      summary: Get Execution Status
       parameters:
         - name: execution-id
           in: path

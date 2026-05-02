@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.reflect.run/v1/tests/1001/executions",
+    "headers": {
+      "X-API-KEY": "{your_api_key}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "overrides": {
+        "hostnames": [
+          {"source": "app.example.com", "target": "staging.example.com"}
+        ],
+        "parameters": [
+          {"name": "username", "value": "testuser@example.com"}
+        ]
+      },
+      "emailFailures": true
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "executionId": 5501
+    }
+  }
+}

@@ -1,0 +1,171 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Reflect API"
+  description: "REST API for managing and executing AI-powered automated end-to-end tests in the Reflect testing platform."
+  tags:
+    - Reflect
+    - Testing
+    - Automation
+    - AI Testing
+    - End-to-End Tests
+  created: "2026-05-02"
+  modified: "2026-05-02"
+
+binds:
+  - namespace: env
+    keys:
+      REFLECT_API_KEY: REFLECT_API_KEY
+
+capability:
+  consumes:
+    - type: http
+      namespace: reflect
+      baseUri: https://api.reflect.run/v1
+      description: "Reflect API for test management and execution."
+      authentication:
+        type: apikey
+        key: X-API-KEY
+        value: "{{REFLECT_API_KEY}}"
+        placement: header
+      resources:
+        - name: tests
+          path: /tests
+          description: "Test management."
+          operations:
+            - name: list-tests
+              method: GET
+              description: "List all tests in the account."
+              inputParameters: []
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+            - name: run-test
+              method: POST
+              description: "Execute a specific test by ID."
+              inputParameters:
+                - name: test-id
+                  in: path
+                  type: integer
+                  required: true
+                  description: "The ID of the test to run."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+              body:
+                type: json
+                data:
+                  overrides:
+                    hostnames: "{{tools.hostnames}}"
+                    parameters: "{{tools.parameters}}"
+                    headers: "{{tools.headers}}"
+                  variables: "{{tools.variables}}"
+                  emailFailures: "{{tools.emailFailures}}"
+
+        - name: executions
+          path: /executions
+          description: "Test execution status."
+          operations:
+            - name: get-execution-status
+              method: GET
+              description: "Get the status of a specific test execution."
+              inputParameters:
+                - name: execution-id
+                  in: path
+                  type: integer
+                  required: true
+                  description: "The ID of the execution to check."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8130
+      namespace: reflect-api
+      resources:
+        - path: /v1/tests
+          name: tests
+          description: "Test listing."
+          operations:
+            - method: GET
+              name: list-tests
+              description: "List all tests."
+              call: "reflect.list-tests"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/tests/{testId}/executions
+          name: test-executions
+          description: "Test execution."
+          operations:
+            - method: POST
+              name: run-test
+              description: "Run a test."
+              call: "reflect.run-test"
+              with:
+                test-id: "rest.testId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/executions/{executionId}
+          name: execution-status
+          description: "Execution status."
+          operations:
+            - method: GET
+              name: get-execution-status
+              description: "Get execution status."
+              call: "reflect.get-execution-status"
+              with:
+                execution-id: "rest.executionId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9130
+      namespace: reflect-mcp
+      transport: http
+      tools:
+        - name: list-tests
+          description: "List all automated end-to-end tests in the Reflect account."
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "reflect.list-tests"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: run-test
+          description: "Execute a Reflect automated test by its ID, with optional overrides for hostnames, parameters, and headers."
+          hints:
+            readOnly: false
+            openWorld: false
+          call: "reflect.run-test"
+          with:
+            test-id: "tools.testId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-execution-status
+          description: "Get the status and results of a Reflect test execution."
+          hints:
+            readOnly: true
+            openWorld: false
+          call: "reflect.get-execution-status"
+          with:
+            execution-id: "tools.executionId"
+          outputParameters:
+            - type: object
+              mapping: "$."
