@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Reflect — Execution
+  description: 'Reflect — Execution. 1 operations. Lead operation: Get Execution Status. Self-contained Naftiko capability
+    covering one Reflect business surface.'
+  tags:
+  - Reflect
+  - Execution
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    REFLECT_API_KEY: REFLECT_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: reflect-execution
+    baseUri: https://api.reflect.run/v1
+    description: Reflect — Execution business capability. Self-contained, no shared references.
+    resources:
+    - name: executions-execution-id
+      path: /executions/{execution-id}
+      operations:
+      - name: get
+        method: GET
+        description: Get Execution Status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: execution-id
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: apikey
+      key: X-API-KEY
+      value: '{{env.REFLECT_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: reflect-execution-rest
+    port: 8080
+    description: REST adapter for Reflect — Execution. One Spectral-compliant resource per consumed operation, prefixed with
+      /v1.
+    resources:
+    - path: /v1/executions/{execution-id}
+      name: executions-execution-id
+      description: REST surface for executions-execution-id.
+      operations:
+      - method: GET
+        name: get
+        description: Get Execution Status
+        call: reflect-execution.get
+        with:
+          execution-id: rest.execution-id
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: reflect-execution-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Reflect — Execution. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-execution-status
+      description: Get Execution Status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: reflect-execution.get
+      with:
+        execution-id: tools.execution-id
+      outputParameters:
+      - type: object
+        mapping: $.
