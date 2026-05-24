@@ -86,6 +86,8 @@ common:
     url: capabilities/test-automation.yaml
   - type: Vocabulary
     url: vocabulary/reflect-vocabulary.yml
+  - type: LLMsTxt
+    url: https://reflect.run/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
