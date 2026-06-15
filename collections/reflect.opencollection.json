@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reflect",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Tests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.reflect.run/v1/tests"
+          },
+          "docs": "List All Tests"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Executions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Run a Test",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.reflect.run/v1/tests/:test-id/executions",
+            "params": [
+              {
+                "name": "test-id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Run a Test"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Execution",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Execution Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.reflect.run/v1/executions/:execution-id",
+            "params": [
+              {
+                "name": "execution-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Execution Status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,564 @@
+{
+  "item": [
+    {
+      "id": "3c5b43df-43fc-4703-bab3-a2b7c297c667",
+      "name": "Execution",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6af57905-841f-4bda-993a-cc589a4e7e11",
+          "name": "Get Execution Status",
+          "request": {
+            "name": "Get Execution Status",
+            "description": {},
+            "url": {
+              "path": [
+                "executions",
+                ":execution-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "execution-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dec4d50c-3a8f-4e0a-ac7b-f6134d84a5ff",
+              "name": "Execution status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "executions",
+                    ":execution-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "execution-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"executionId\": 5048,\n  \"tests\": [\n    {\n      \"testId\": 7051,\n      \"status\": \"string\",\n      \"started\": 4095,\n      \"completed\": 2707\n    },\n    {\n      \"testId\": 5263,\n      \"status\": \"string\",\n      \"started\": 8646,\n      \"completed\": 5784\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "e2ac4174-7517-4350-89a8-513e8906455a",
+      "name": "Executions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "59871677-ff9a-43dc-8206-ade26ae2b785",
+          "name": "Run a Test",
+          "request": {
+            "name": "Run a Test",
+            "description": {},
+            "url": {
+              "path": [
+                "tests",
+                ":test-id",
+                "executions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "test-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a88c573c-29e6-4ae8-85d1-83a79d7431d2",
+              "name": "Execution scheduled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tests",
+                    ":test-id",
+                    "executions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "test-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"executionId\": 5745\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b9c21b6-8da8-4a3e-9ef9-57cbda54a487",
+          "name": "Get Execution Status",
+          "request": {
+            "name": "Get Execution Status",
+            "description": {},
+            "url": {
+              "path": [
+                "executions",
+                ":execution-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "execution-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "82bc8af5-a954-4182-a0f9-91783ad4284f",
+              "name": "Execution status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "executions",
+                    ":execution-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "execution-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"executionId\": 7621,\n  \"tests\": [\n    {\n      \"testId\": 6145,\n      \"status\": \"string\",\n      \"started\": 6560,\n      \"completed\": 7332\n    },\n    {\n      \"testId\": 4304,\n      \"status\": \"string\",\n      \"started\": 6923,\n      \"completed\": 3591\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "b35124ca-f468-43cb-9eae-5b0beba287c0",
+      "name": "Tests",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4ad39dfc-d4b4-42e5-b19e-64980c3dcfd5",
+          "name": "List All Tests",
+          "request": {
+            "name": "List All Tests",
+            "description": {},
+            "url": {
+              "path": [
+                "tests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6008b52f-6c37-4d43-8168-507d03efcc7f",
+              "name": "A list of test descriptions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tests\": [\n    {\n      \"id\": 8376,\n      \"name\": \"string\",\n      \"created\": 4470,\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"id\": 5989,\n      \"name\": \"string\",\n      \"created\": 5352,\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2edafabe-8126-4d9c-914f-48293cac89ac",
+          "name": "Run a Test",
+          "request": {
+            "name": "Run a Test",
+            "description": {},
+            "url": {
+              "path": [
+                "tests",
+                ":test-id",
+                "executions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "test-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bfc41bc6-76f0-4915-af7c-c071fd4c39c8",
+              "name": "Execution scheduled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tests",
+                    ":test-id",
+                    "executions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "test-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"executionId\": 5745\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.reflect.run/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "14804895-0b7d-460f-a532-c1322023b69b",
+    "name": "Reflect",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nEffortlessly create, execute, and troubleshoot automated end-to-end tests\nusing Reflect's advanced AI capabilities.",
+      "type": "text/plain"
+    }
+  }
+}
