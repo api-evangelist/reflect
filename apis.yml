@@ -54,7 +54,7 @@ common:
     url: https://reflect.run/customers/
   - type: Login
     url: https://app.reflect.run/login
-  - type: SignUp
+  - type: Signup
     url: https://app.reflect.run/registration
   - type: About
     url: https://reflect.run/about/
@@ -80,7 +80,7 @@ common:
     url: rules/reflect-rules.yml
   - type: Vocabulary
     url: vocabulary/reflect-vocabulary.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://reflect.run/llms.txt
 maintainers:
   - FN: Kin Lane
