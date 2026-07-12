@@ -42,6 +42,12 @@ apis:
       - type: Integrations
         url: https://reflect.run/docs/integrations/
 common:
+  - type: DomainSecurity
+    url: security/reflect-domain-security.yml
+  - type: Authentication
+    url: authentication/reflect-authentication.yml
+  - url: https://reflect.run/articles/index.xml
+    type: Blog
   - type: GitHubOrganization
     url: https://github.com/reflect
   - type: LinkedIn
