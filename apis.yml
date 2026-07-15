@@ -42,6 +42,8 @@ apis:
       - type: Integrations
         url: https://reflect.run/docs/integrations/
 common:
+  - type: AgenticAccess
+    url: agentic-access/reflect-agentic-access.yml
   - type: DomainSecurity
     url: security/reflect-domain-security.yml
   - type: Authentication
