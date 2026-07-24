@@ -1,0 +1,97 @@
+openapi: 3.1.0
+info:
+  title: Reflect Execution Tests API
+  version: 1.0.0
+  description: '
+
+    Effortlessly create, execute, and troubleshoot automated end-to-end tests
+
+    using Reflect''s advanced AI capabilities.'
+servers:
+- url: https://api.reflect.run/v1
+security:
+- ApiKeyAuth: []
+tags:
+- name: Tests
+paths:
+  /tests:
+    get:
+      summary: List All Tests
+      responses:
+        '200':
+          description: A list of test descriptions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tests:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        created:
+                          type: integer
+                        tags:
+                          type: array
+                          items:
+                            type: string
+      tags:
+      - Tests
+  /tests/{test-id}/executions:
+    post:
+      summary: Run a Test
+      parameters:
+      - name: test-id
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                overrides:
+                  type: object
+                  properties:
+                    hostnames:
+                      type: array
+                    parameters:
+                      type: array
+                    cookies:
+                      type: array
+                    headers:
+                      type: array
+                    localStorage:
+                      type: array
+                    sessionStorage:
+                      type: array
+                variables:
+                  type: object
+                emailFailures:
+                  type: boolean
+      responses:
+        '200':
+          description: Execution scheduled
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  executionId:
+                    type: integer
+      tags:
+      - Tests
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY

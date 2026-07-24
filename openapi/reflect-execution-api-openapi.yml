@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: Reflect Execution API
+  version: 1.0.0
+  description: '
+
+    Effortlessly create, execute, and troubleshoot automated end-to-end tests
+
+    using Reflect''s advanced AI capabilities.'
+servers:
+- url: https://api.reflect.run/v1
+security:
+- ApiKeyAuth: []
+tags:
+- name: Execution
+paths:
+  /executions/{execution-id}:
+    get:
+      summary: Get Execution Status
+      parameters:
+      - name: execution-id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Execution status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  executionId:
+                    type: integer
+                  tests:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        testId:
+                          type: integer
+                        status:
+                          type: string
+                        started:
+                          type: integer
+                        completed:
+                          type: integer
+      tags:
+      - Execution
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
