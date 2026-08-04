@@ -1,0 +1,18 @@
+{
+  "provider": "reflect",
+  "sources": [
+    "reflect-execution-api-openapi.yml",
+    "reflect-executions-api-openapi.yml",
+    "reflect-tests-api-openapi.yml"
+  ],
+  "outputs": [
+    "reflect-execution-api-openapi.yml",
+    "reflect-executions-api-openapi.yml",
+    "reflect-tests-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
