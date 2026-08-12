@@ -115,7 +115,7 @@ common:
   - type: GettingStarted
     url: https://reflect.run/docs/overview/quick-start/
   - type: OpenAPI
-    url: openapi/reflect-openapi.yml
+    url: openapi/_original/reflect-openapi.yml
   - type: JSONSchema
     url: json-schema/reflect-test-schema.json
   - type: JSONSchema
