@@ -23,7 +23,7 @@ image: https://reflect.run/assets/logo.png
 url: https://raw.githubusercontent.com/api-evangelist/reflect/refs/heads/main/apis.yml
 created: '2024-11-13'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 tags:
   - AI Testing
   - Artificial Intelligence
