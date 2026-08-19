@@ -1,0 +1,258 @@
+{
+  "item": [
+    {
+      "id": "88e2b716-10ee-4bcb-b893-765af0fc2197",
+      "name": "Executions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a8e087bc-a05d-42db-967e-d3e239f2a23f",
+          "name": "Run a Test",
+          "request": {
+            "name": "Run a Test",
+            "description": {},
+            "url": {
+              "path": [
+                "tests",
+                ":test-id",
+                "executions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "test-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "246b977a-3f16-45ee-9d8c-cf8fca17c6fd",
+              "name": "Execution scheduled",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tests",
+                    ":test-id",
+                    "executions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "test-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"executionId\": 4005\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71239c1f-f22e-4a08-995f-8f116f473f3b",
+          "name": "Get Execution Status",
+          "request": {
+            "name": "Get Execution Status",
+            "description": {},
+            "url": {
+              "path": [
+                "executions",
+                ":execution-id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "execution-id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b9661102-d2b0-42c3-96ae-72be0badb876",
+              "name": "Execution status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "executions",
+                    ":execution-id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "execution-id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-API-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"executionId\": 3432,\n  \"tests\": [\n    {\n      \"testId\": 8233,\n      \"status\": \"string\",\n      \"started\": 2689,\n      \"completed\": 9647\n    },\n    {\n      \"testId\": 1659,\n      \"status\": \"string\",\n      \"started\": 1591,\n      \"completed\": 6554\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.reflect.run/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a106a2eb-610a-4bb7-8cc1-98712cc5c2c1",
+    "name": "Reflect Execution Executions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "\nEffortlessly create, execute, and troubleshoot automated end-to-end tests\nusing Reflect's advanced AI capabilities.",
+      "type": "text/plain"
+    }
+  }
+}

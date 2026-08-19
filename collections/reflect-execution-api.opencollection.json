@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reflect Execution API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Execution",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Execution Status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.reflect.run/v1/executions/:execution-id",
+            "params": [
+              {
+                "name": "execution-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Execution Status"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

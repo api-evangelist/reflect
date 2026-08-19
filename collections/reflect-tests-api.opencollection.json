@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Reflect Execution Tests API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-KEY",
+      "value": "{{X-API-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List All Tests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.reflect.run/v1/tests"
+          },
+          "docs": "List All Tests"
+        },
+        {
+          "info": {
+            "name": "Run a Test",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.reflect.run/v1/tests/:test-id/executions",
+            "params": [
+              {
+                "name": "test-id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Run a Test"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
