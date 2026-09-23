@@ -1,10 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Reflect Execution Tests API
+  title: Reflect Tests API
   version: 1.0.0
-  description: '
-
-    Effortlessly create, execute, and troubleshoot automated end-to-end tests
+  description: 'Effortlessly create, execute, and troubleshoot automated end-to-end tests
 
     using Reflect''s advanced AI capabilities.'
 servers:
@@ -42,53 +40,8 @@ paths:
                             type: string
       tags:
       - Tests
-  /tests/{test-id}/executions:
-    post:
-      summary: Run a Test
-      parameters:
-      - name: test-id
-        in: path
-        required: true
-        schema:
-          type: integer
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                overrides:
-                  type: object
-                  properties:
-                    hostnames:
-                      type: array
-                    parameters:
-                      type: array
-                    cookies:
-                      type: array
-                    headers:
-                      type: array
-                    localStorage:
-                      type: array
-                    sessionStorage:
-                      type: array
-                variables:
-                  type: object
-                emailFailures:
-                  type: boolean
-      responses:
-        '200':
-          description: Execution scheduled
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  executionId:
-                    type: integer
-      tags:
-      - Tests
+      operationId: getTests
+      x-operation-id-source: derived
 components:
   securitySchemes:
     ApiKeyAuth:

@@ -1,9 +1,7 @@
 {
   "provider": "reflect",
   "sources": [
-    "reflect-execution-api-openapi.yml",
-    "reflect-executions-api-openapi.yml",
-    "reflect-tests-api-openapi.yml"
+    "_original/reflect-openapi.yml"
   ],
   "outputs": [
     "reflect-execution-api-openapi.yml",
@@ -13,6 +11,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "reflect-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "reflect-openapi.yml: multi-axis tagging (3 tags, 3 first tags, 1.67x duplication over 3 operations) \u2014 split on first tag, 2 operations narrowed",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "reflect-execution-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "reflect-executions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "reflect-tests-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

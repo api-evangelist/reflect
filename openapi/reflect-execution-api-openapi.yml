@@ -1,10 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Reflect Execution API
   version: 1.0.0
-  description: '
-
-    Effortlessly create, execute, and troubleshoot automated end-to-end tests
+  description: 'Effortlessly create, execute, and troubleshoot automated end-to-end tests
 
     using Reflect''s advanced AI capabilities.'
 servers:
@@ -48,6 +46,8 @@ paths:
                           type: integer
       tags:
       - Execution
+      operationId: getExecutionsByExecutionId
+      x-operation-id-source: derived
 components:
   securitySchemes:
     ApiKeyAuth:
