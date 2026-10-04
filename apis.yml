@@ -97,6 +97,9 @@ apis:
   - type: Integrations
     url: https://reflect.run/docs/integrations/
 common:
+- type: CapabilityMap
+  url: capabilities/reflect-capability-edges.yml
+  name: Reflect Business Capability Map
 - type: Website
   url: https://reflect.run
 - type: AgenticAccess
