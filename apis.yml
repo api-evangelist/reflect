@@ -97,6 +97,8 @@ apis:
   - type: Integrations
     url: https://reflect.run/docs/integrations/
 common:
+- type: Plans
+  url: plans/reflect-plans-pricing.yml
 - type: CapabilityMap
   url: capabilities/reflect-capability-edges.yml
   name: Reflect Business Capability Map
