@@ -97,6 +97,8 @@ apis:
   - type: Integrations
     url: https://reflect.run/docs/integrations/
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/reflect/overview
 - type: RateLimits
   url: rate-limits/reflect-rate-limits.yml
 - type: FinOps
