@@ -1,116 +1,119 @@
 {
+  "info": {
+    "_postman_id": "1095b305-fd60-4a6e-a32b-5f9914a5b531",
+    "name": "Reflect Execution API",
+    "description": "Effortlessly create, execute, and troubleshoot automated end-to-end tests\nusing Reflect's advanced AI capabilities.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-21T20:05:59.000Z",
+    "updatedAt": "2026-10-21T20:05:59.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1095b305-fd60-4a6e-a32b-5f9914a5b531"
+  },
   "item": [
     {
-      "id": "d8b74cec-69e7-4685-9ab4-79c9265bac7a",
-      "name": "Execution",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "executions",
       "item": [
         {
-          "id": "8838e354-72d7-4b50-b99d-f111fb752c81",
-          "name": "Get Execution Status",
-          "request": {
-            "name": "Get Execution Status",
-            "description": {},
-            "url": {
-              "path": [
-                "executions",
-                ":execution-id"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<integer>",
-                  "key": "execution-id",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "{execution-id}",
+          "item": [
             {
-              "id": "0dfd4f5a-7d54-4b3f-910d-334330314507",
-              "name": "Execution status",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "executions",
-                    ":execution-id"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<integer>",
-                      "key": "execution-id",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
+              "name": "Get Execution Status",
+              "id": "ce2676bc-8d2a-450b-adee-8913251e0a96",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-API-KEY",
-                    "value": "<API Key>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/executions/:execution-id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "executions",
+                    ":execution-id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "2d8a9f2d-d4cf-45e2-9ffa-71adb0545d39",
+                      "key": "execution-id",
+                      "value": "<integer>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "1bf937e0-ef2e-4a2c-aef1-9264ae816302",
+                  "name": "Execution status",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "X-API-KEY",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/executions/:execution-id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "executions",
+                        ":execution-id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "execution-id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"executionId\": \"<integer>\",\n  \"tests\": [\n    {\n      \"testId\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"started\": \"<integer>\",\n      \"completed\": \"<integer>\"\n    },\n    {\n      \"testId\": \"<integer>\",\n      \"status\": \"<string>\",\n      \"started\": \"<integer>\",\n      \"completed\": \"<integer>\"\n    }\n  ]\n}",
+                  "createdAt": "2026-10-21T20:05:59.000Z",
+                  "updatedAt": "2026-10-21T20:05:59.000Z",
+                  "uid": "35240-1bf937e0-ef2e-4a2c-aef1-9264ae816302"
                 }
               ],
-              "body": "{\n  \"executionId\": 409,\n  \"tests\": [\n    {\n      \"testId\": 3198,\n      \"status\": \"string\",\n      \"started\": 6501,\n      \"completed\": 6111\n    },\n    {\n      \"testId\": 7584,\n      \"status\": \"string\",\n      \"started\": 7130,\n      \"completed\": 8820\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-21T20:05:59.000Z",
+              "updatedAt": "2026-10-21T20:05:59.000Z",
+              "uid": "35240-ce2676bc-8d2a-450b-adee-8913251e0a96"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "7830f70e-233e-49bc-817f-1118a74dc092",
+          "createdAt": "2026-10-21T20:05:59.000Z",
+          "updatedAt": "2026-10-21T20:05:59.000Z",
+          "uid": "35240-7830f70e-233e-49bc-817f-1118a74dc092"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.reflect.run/v1",
-      "key": "baseUrl"
+      "id": "7aeb3d9c-d311-44ae-a0f3-e95ac725647b",
+      "createdAt": "2026-10-21T20:05:59.000Z",
+      "updatedAt": "2026-10-21T20:05:59.000Z",
+      "uid": "35240-7aeb3d9c-d311-44ae-a0f3-e95ac725647b"
     }
   ],
   "auth": {
@@ -118,25 +121,25 @@
     "apikey": [
       {
         "key": "key",
-        "value": "X-API-KEY"
+        "value": "X-API-KEY",
+        "type": "string"
       },
       {
         "key": "value",
-        "value": "{{apiKey}}"
+        "value": "{{apiKey}}",
+        "type": "string"
       },
       {
         "key": "in",
-        "value": "header"
+        "value": "header",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "75f0edb7-6c5d-49ee-902f-9fdb817bc1c7",
-    "name": "Reflect Execution API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "\nEffortlessly create, execute, and troubleshoot automated end-to-end tests\nusing Reflect's advanced AI capabilities.",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.reflect.run/v1"
     }
-  }
+  ]
 }

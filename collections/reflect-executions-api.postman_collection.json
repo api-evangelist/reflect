@@ -1,232 +1,158 @@
 {
+  "info": {
+    "_postman_id": "0a58c409-2ff8-4455-9aa0-37c2ec4c011a",
+    "name": "Reflect Executions API",
+    "description": "Effortlessly create, execute, and troubleshoot automated end-to-end tests\nusing Reflect's advanced AI capabilities.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-21T20:06:15.000Z",
+    "updatedAt": "2026-10-21T20:06:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0a58c409-2ff8-4455-9aa0-37c2ec4c011a"
+  },
   "item": [
     {
-      "id": "88e2b716-10ee-4bcb-b893-765af0fc2197",
-      "name": "Executions",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "tests",
       "item": [
         {
-          "id": "a8e087bc-a05d-42db-967e-d3e239f2a23f",
-          "name": "Run a Test",
-          "request": {
-            "name": "Run a Test",
-            "description": {},
-            "url": {
-              "path": [
-                "tests",
-                ":test-id",
-                "executions"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<integer>",
-                  "key": "test-id",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "POST",
-            "auth": null,
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "{test-id}",
+          "item": [
             {
-              "id": "246b977a-3f16-45ee-9d8c-cf8fca17c6fd",
-              "name": "Execution scheduled",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "tests",
-                    ":test-id",
-                    "executions"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<integer>",
-                      "key": "test-id",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-API-KEY",
-                    "value": "<API Key>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": \"<object>\",\n  \"emailFailures\": \"<boolean>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "name": "executions",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "name": "Run a Test",
+                  "id": "2256ab37-9fef-4852-b0a2-c2eea92d894a",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": {},\n  \"emailFailures\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/tests/:test-id/executions",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "tests",
+                        ":test-id",
+                        "executions"
+                      ],
+                      "variable": [
+                        {
+                          "id": "9f369f93-2a6f-4389-9979-a95c840c0975",
+                          "key": "test-id",
+                          "value": "<integer>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "43471fed-4570-4472-afd9-24c6250df81c",
+                      "name": "Execution scheduled",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "X-API-KEY",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"overrides\": {\n    \"hostnames\": \"<array>\",\n    \"parameters\": \"<array>\",\n    \"cookies\": \"<array>\",\n    \"headers\": \"<array>\",\n    \"localStorage\": \"<array>\",\n    \"sessionStorage\": \"<array>\"\n  },\n  \"variables\": {},\n  \"emailFailures\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/tests/:test-id/executions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "tests",
+                            ":test-id",
+                            "executions"
+                          ],
+                          "variable": [
+                            {
+                              "key": "test-id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"executionId\": \"<integer>\"\n}",
+                      "createdAt": "2026-10-21T20:06:15.000Z",
+                      "updatedAt": "2026-10-21T20:06:15.000Z",
+                      "uid": "35240-43471fed-4570-4472-afd9-24c6250df81c"
+                    }
+                  ],
+                  "createdAt": "2026-10-21T20:06:15.000Z",
+                  "updatedAt": "2026-10-21T20:06:15.000Z",
+                  "uid": "35240-2256ab37-9fef-4852-b0a2-c2eea92d894a"
                 }
               ],
-              "body": "{\n  \"executionId\": 4005\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "afc520e4-715a-49c1-83e7-314158eb4021",
+              "createdAt": "2026-10-21T20:06:15.000Z",
+              "updatedAt": "2026-10-21T20:06:15.000Z",
+              "uid": "35240-afc520e4-715a-49c1-83e7-314158eb4021"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "71239c1f-f22e-4a08-995f-8f116f473f3b",
-          "name": "Get Execution Status",
-          "request": {
-            "name": "Get Execution Status",
-            "description": {},
-            "url": {
-              "path": [
-                "executions",
-                ":execution-id"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<integer>",
-                  "key": "execution-id",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "b9661102-d2b0-42c3-96ae-72be0badb876",
-              "name": "Execution status",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "executions",
-                    ":execution-id"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<integer>",
-                      "key": "execution-id",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: apikey",
-                      "type": "text/plain"
-                    },
-                    "key": "X-API-KEY",
-                    "value": "<API Key>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                }
-              ],
-              "body": "{\n  \"executionId\": 3432,\n  \"tests\": [\n    {\n      \"testId\": 8233,\n      \"status\": \"string\",\n      \"started\": 2689,\n      \"completed\": 9647\n    },\n    {\n      \"testId\": 1659,\n      \"status\": \"string\",\n      \"started\": 1591,\n      \"completed\": 6554\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "73729ed1-d3e4-495e-8290-67e783f93976",
+          "createdAt": "2026-10-21T20:06:15.000Z",
+          "updatedAt": "2026-10-21T20:06:15.000Z",
+          "uid": "35240-73729ed1-d3e4-495e-8290-67e783f93976"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://api.reflect.run/v1",
-      "key": "baseUrl"
+      "id": "4f09a3b7-be8b-4522-9bf7-43e1e7cb7f8b",
+      "createdAt": "2026-10-21T20:06:15.000Z",
+      "updatedAt": "2026-10-21T20:06:15.000Z",
+      "uid": "35240-4f09a3b7-be8b-4522-9bf7-43e1e7cb7f8b"
     }
   ],
   "auth": {
@@ -234,25 +160,25 @@
     "apikey": [
       {
         "key": "key",
-        "value": "X-API-KEY"
+        "value": "X-API-KEY",
+        "type": "string"
       },
       {
         "key": "value",
-        "value": "{{apiKey}}"
+        "value": "{{apiKey}}",
+        "type": "string"
       },
       {
         "key": "in",
-        "value": "header"
+        "value": "header",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "a106a2eb-610a-4bb7-8cc1-98712cc5c2c1",
-    "name": "Reflect Execution Executions API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "\nEffortlessly create, execute, and troubleshoot automated end-to-end tests\nusing Reflect's advanced AI capabilities.",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.reflect.run/v1"
     }
-  }
+  ]
 }
